@@ -55,10 +55,14 @@ const EditUser = (props) => {
     props.setShowWeight(updatedShowWeight);
   }
 
-  const handleDefaultTimespanChange = (newTimespan) => {
-    var updatedTimespan = newTimespan;
-    setDefaultTimespan(updatedTimespan);
-    props.setDefaultTimespan(updatedTimespan);
+  const handleDefaultTimespanChange = (timespan) => {
+    setDefaultTimespan(timespan);
+    props.setDefaultTimespan(timespan);
+  }
+
+  const handleTimezoneChange = (timezone) => {
+    setTimeZone(timezone);
+    props.setTimeZone(timezone);
   }
 
   // const handle24HoursPreferenceChange = () => {
@@ -196,7 +200,7 @@ const EditUser = (props) => {
               }}
             />
             <DefaultTimeSpans setDefaultTimespan={handleDefaultTimespanChange} defaultTimespan={defaultTimespan} />
-            <TimeZoneList timezone={props.userInfo.details.timezone} setTimeZone={props.setTimeZone} value={props.userInfo.details.timezone} />
+            <TimeZoneList timezone={timezone} setTimeZone={handleTimezoneChange} />
             {/* <TextField
               id='weight'
               label='Weight'
