@@ -6,7 +6,9 @@ server/sugarpy/sugarpy/secrets.py
 # django
 server/sugar-venv/
 server/sugar-venv-2/
-
+utils/django.js
+utils/django.js
+#Keeps the url pointed locally for further dev work
 
 # dependencies
 /node_modules
