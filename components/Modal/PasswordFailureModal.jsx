@@ -24,13 +24,10 @@ const StyledLoginResponseRowDiv = styled.div`
 
 const PasswordFailureModal = ({ title, description, modalOpen, setModalOpen, toggleView }) => {
   const acknowledgements = [
-    'Oh, cool',
     'Okay',
     'Got it',
     'Acknowledged',
-    'Thanks',
-    'I get it',
-    'I\'ll try something else',
+    'I get it'
   ];
   var ack = acknowledgements[Math.floor(Math.random() * acknowledgements.length)];
 

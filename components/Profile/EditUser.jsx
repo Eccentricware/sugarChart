@@ -32,6 +32,8 @@ const EditUser = (props) => {
   const [showWeight, setShowWeight] = useState(props.userInfo.details.show_weight);
   const [showAge, setShowAge] = useState(props.userInfo.details.show_age);
   const [show24Hours, setShow24Hours] = useState(props.userInfo.details.show_24_hours);
+  const [defaultTimespan, setDefaultTimespan] = useState(props.userInfo.details.default_timespan);
+  const [timezone, setTimeZone] = useState(props.userInfo.details.timezone);
 
   const router = useRouter();
 
@@ -53,11 +55,21 @@ const EditUser = (props) => {
     props.setShowWeight(updatedShowWeight);
   }
 
-  const handle24HoursPreferenceChange = () => {
-    var updated24HourPreference = !show24Hours;
-    setShow24Hours(updated24HourPreference);
-    props.setShow24Hours(updated24HourPreference);
+  const handleDefaultTimespanChange = (timespan) => {
+    setDefaultTimespan(timespan);
+    props.setDefaultTimespan(timespan);
   }
+
+  const handleTimezoneChange = (timezone) => {
+    setTimeZone(timezone);
+    props.setTimeZone(timezone);
+  }
+
+  // const handle24HoursPreferenceChange = () => {
+  //   var updated24HourPreference = !show24Hours;
+  //   setShow24Hours(updated24HourPreference);
+  //   props.setShow24Hours(updated24HourPreference);
+  // }
 
   const handleSaveClick = () => {
     props.saveUserInfo();
@@ -187,8 +199,8 @@ const EditUser = (props) => {
                 props.setWeight(Number(e.target.value));
               }}
             />
-            <DefaultTimeSpans setDefaultTimespan={props.setDefaultTimespan} defaultTimespan={props.userInfo.details.default_timespan} />
-            <TimeZoneList timezone={props.userInfo.details.timezone} setTimeZone={props.setTimeZone} value={props.userInfo.details.timezone} />
+            <DefaultTimeSpans setDefaultTimespan={handleDefaultTimespanChange} defaultTimespan={defaultTimespan} />
+            <TimeZoneList timezone={timezone} setTimeZone={handleTimezoneChange} />
             {/* <TextField
               id='weight'
               label='Weight'

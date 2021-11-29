@@ -58,7 +58,7 @@ const LogIn = () => {
   const router = useRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [warningOpen, setWarningOpen] = useState(true);
 
   const warningTitle = 'Disclaimer';
@@ -73,11 +73,11 @@ const LogIn = () => {
         title={warningTitle}
         description={warningDescription}
       />
-      {/* <LoginFailureModal
+      <LoginFailureModal
         open={open}
         setOpen={setOpen}
         toggleView={() => { setOpen(!open); }}
-      /> */}
+      />
       <h1>Sugar Chart</h1>
       <div>
         <Image className='logo' src={logo} alt='butterfly logo'/>
