@@ -62,7 +62,7 @@ const LogIn = () => {
   const [warningOpen, setWarningOpen] = useState(true);
 
   const warningTitle = 'Disclaimer';
-  const warningDescription = 'This site remains under development and resources have not yet been invested for security. Please assume any and all information can be intercepted as you demo this product.';
+  const warningDescription = 'While the theme of this app is to help you track your glucose levels, by moving forward you understand that this app may not be HIPAA compliant';
 
   return (
     <StyledLoginDiv>
