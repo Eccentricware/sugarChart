@@ -111,7 +111,9 @@ const Charts = (props) => {
       }
     })
     .then(userInfoResponse => {
-      setUserInfo(userInfoResponse.data[0]);
+      let userData = userInfoResponse.data[0]
+      setUserInfo(userData);
+      setTimeRange(userData.details.default_timespan);
       var timespan = userInfoResponse.data[0].details.default_timespan;
       axios({
         method: 'get',
