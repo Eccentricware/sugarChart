@@ -1,5 +1,5 @@
 const django = {
-  url: 'http://localhost:8000',
+  url: 'https://api.sugarchart.net',
   tokenLoader: function() {
     var djangoToken = document.cookie
       .split('; ')
